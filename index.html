@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KlawdiaTV - Demo Games</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #120f17;
+      color: #f5f5f5;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    h1 {
+      color: #c77dff;
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      color: #cfc6d8;
+      margin-bottom: 30px;
+    }
+
+    .summary {
+      background: #21192a;
+      border: 1px solid #3b2b49;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1a151f;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th {
+      background: #2b2033;
+      color: #ffffff;
+      text-align: left;
+      padding: 14px;
+    }
+
+    td {
+      padding: 14px;
+      border-top: 1px solid #382c41;
+    }
+
+    tr:hover {
+      background: #241b2b;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .steam {
+      background: #cdeec5;
+      color: #237125;
+    }
+
+    .loved {
+      background: #d9f2c8;
+      color: #246b2c;
+    }
+
+    .liked {
+      background: #ffe5a5;
+      color: #7b5800;
+    }
+
+    .skip {
+      background: #f4b7b7;
+      color: #7b1e1e;
+    }
+
+    a {
+      color: #c77dff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      table {
+        font-size: 14px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+      }
+
+      .container {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Demo Games I've Played</h1>
+
+    <p class="intro">
+      A growing collection of game demos I've tried, with my first impressions
+      and whether I'd consider playing the full release.
+    </p>
+
+    <div class="summary">
+      <strong>Demos Played:</strong> 3
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>Platform</th>
+          <th>Date Played</th>
+          <th>Impression</th>
+          <th>Full Game</th>
+          <th>Content</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Example Horror Demo</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>September 2026</td>
+          <td><span class="badge loved">Loved It</span></td>
+          <td>Want to Play</td>
+          <td><a href="#">YouTube</a></td>
+        </tr>
+
+        <tr>
+          <td>Example Demo Two</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>September 2026</td>
+          <td><span class="badge liked">Interesting</span></td>
+          <td>Maybe</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Example Demo Three</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>August 2026</td>
+          <td><span class="badge skip">Not For Me</span></td>
+          <td>Skip</td>
+          <td>-</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</body>
+</html>
