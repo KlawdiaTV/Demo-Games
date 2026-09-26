@@ -111,7 +111,32 @@
     a:hover {
       text-decoration: underline;
     }
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
 
+.controls input,
+.controls select {
+  background: #1a151f;
+  color: #f5f5f5;
+  border: 1px solid #3b2b49;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.controls input {
+  min-width: 220px;
+}
+
+.controls input:focus,
+.controls select:focus {
+  outline: none;
+  border-color: #c77dff;
+}
     @media (max-width: 800px) {
       table {
         font-size: 14px;
@@ -143,7 +168,30 @@
     <div class="summary">
       <strong>Demos Played:</strong> 3
     </div>
+<div class="controls">
 
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search games..."
+  >
+
+  <select id="impressionFilter">
+    <option value="">All Impressions</option>
+    <option value="Interesting">Interesting</option>
+    <option value="Loved It">Loved It</option>
+    <option value="Liked It">Liked It</option>
+    <option value="Not For Me">Not For Me</option>
+  </select>
+
+  <select id="interestFilter">
+    <option value="">All Full Game Interest</option>
+    <option value="Definitely Playing">Definitely Playing</option>
+    <option value="Maybe">Maybe</option>
+    <option value="Not Interested">Not Interested</option>
+  </select>
+
+</div>
     <table>
       <thead>
 <tr>
@@ -189,6 +237,40 @@
     </table>
 
   </div>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const impressionFilter = document.getElementById("impressionFilter");
+  const interestFilter = document.getElementById("interestFilter");
 
+  function filterTable() {
+    const searchValue = searchInput.value.toLowerCase();
+    const impressionValue = impressionFilter.value.toLowerCase();
+    const interestValue = interestFilter.value.toLowerCase();
+
+    const rows = document.querySelectorAll("tbody tr");
+
+    rows.forEach(row => {
+      const game = row.cells[0].textContent.toLowerCase();
+      const impression = row.cells[3].textContent.toLowerCase();
+      const interest = row.cells[4].textContent.toLowerCase();
+
+      const matchesSearch = game.includes(searchValue);
+      const matchesImpression =
+        impressionValue === "" || impression.includes(impressionValue);
+      const matchesInterest =
+        interestValue === "" || interest.includes(interestValue);
+
+      if (matchesSearch && matchesImpression && matchesInterest) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
+
+  searchInput.addEventListener("input", filterTable);
+  impressionFilter.addEventListener("change", filterTable);
+  interestFilter.addEventListener("change", filterTable);
+</script>
 </body>
 </html>
