@@ -7,6 +7,18 @@
 
   <style>
     body {
+      .twitch-section,
+      .twitch-chat {
+  margin-bottom: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.twitch-section iframe,
+.twitch-chat iframe {
+  border: none;
+  display: block;
+}
       margin: 0;
       font-family: Arial, sans-serif;
       background: #120f17;
@@ -253,6 +265,7 @@
 
   </div>
 <script>
+  
   const searchInput = document.getElementById("searchInput");
   const impressionFilter = document.getElementById("impressionFilter");
   const interestFilter = document.getElementById("interestFilter");
@@ -280,6 +293,7 @@
       } else {
         row.style.display = "none";
       }
+      
     });
   }
 
