@@ -1,33 +1,24 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>KlawdiaTV - Demo Games</title>
 
   <style>
     body {
-      .twitch-section,
-      .twitch-chat {
-  margin-bottom: 20px;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.twitch-section iframe,
-.twitch-chat iframe {
-  border: none;
-  display: block;
-}
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #120f17;
+      background:
+        linear-gradient(rgba(18, 15, 23, 0.84), rgba(18, 15, 23, 0.84)),
+        url("background.jpg") center center / cover fixed;
       color: #f5f5f5;
     }
 
     .container {
-      width: 90%;
-      max-width: 1200px;
+      width: 92%;
+      max-width: 1500px;
       margin: 40px auto;
     }
 
@@ -42,23 +33,80 @@
     }
 
     .summary {
-      background: #21192a;
+      background: rgba(33, 25, 42, 0.92);
       border: 1px solid #3b2b49;
       border-radius: 14px;
       padding: 18px;
       margin-bottom: 20px;
     }
 
+    /* TWITCH */
+
+    .twitch-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(320px, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+      align-items: stretch;
+    }
+
+    .twitch-section,
+    .twitch-chat {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #1a151f;
+      border: 1px solid #3b2b49;
+    }
+
+    .twitch-section iframe,
+    .twitch-chat iframe {
+      width: 100%;
+      height: 520px;
+      border: none;
+      display: block;
+    }
+
+    /* FILTERS */
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .controls input,
+    .controls select {
+      background: rgba(26, 21, 31, 0.95);
+      color: #f5f5f5;
+      border: 1px solid #3b2b49;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+
+    .controls input {
+      min-width: 220px;
+    }
+
+    .controls input:focus,
+    .controls select:focus {
+      outline: none;
+      border-color: #c77dff;
+    }
+
+    /* TABLE */
+
     table {
       width: 100%;
       border-collapse: collapse;
-      background: #1a151f;
+      background: rgba(26, 21, 31, 0.94);
       border-radius: 14px;
       overflow: hidden;
     }
 
     th {
-      background: #2b2033;
+      background: rgba(43, 32, 51, 0.96);
       color: #ffffff;
       text-align: left;
       padding: 14px;
@@ -70,8 +118,10 @@
     }
 
     tr:hover {
-      background: #241b2b;
+      background: rgba(36, 27, 43, 0.96);
     }
+
+    /* BADGES */
 
     .badge {
       display: inline-block;
@@ -100,20 +150,23 @@
       background: #f4b7b7;
       color: #7b1e1e;
     }
+
     .definitely {
-  background: #d9f2c8;
-  color: #246b2c;
-}
+      background: #d9f2c8;
+      color: #246b2c;
+    }
 
-.maybe {
-  background: #ffe5a5;
-  color: #7b5800;
-}
+    .maybe {
+      background: #ffe5a5;
+      color: #7b5800;
+    }
 
-.nointerest {
-  background: #f4b7b7;
-  color: #7b1e1e;
-}
+    .nointerest {
+      background: #f4b7b7;
+      color: #7b1e1e;
+    }
+
+    /* LINKS */
 
     a {
       color: #c77dff;
@@ -123,32 +176,23 @@
     a:hover {
       text-decoration: underline;
     }
-.controls {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
 
-.controls input,
-.controls select {
-  background: #1a151f;
-  color: #f5f5f5;
-  border: 1px solid #3b2b49;
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 14px;
-}
+    /* MOBILE */
 
-.controls input {
-  min-width: 220px;
-}
+    @media (max-width: 950px) {
+      .twitch-layout {
+        grid-template-columns: 1fr;
+      }
 
-.controls input:focus,
-.controls select:focus {
-  outline: none;
-  border-color: #c77dff;
-}
+      .twitch-section iframe {
+        height: 420px;
+      }
+
+      .twitch-chat iframe {
+        height: 500px;
+      }
+    }
+
     @media (max-width: 800px) {
       table {
         font-size: 14px;
@@ -161,6 +205,17 @@
 
       .container {
         width: 95%;
+        margin: 20px auto;
+      }
+
+      .controls {
+        flex-direction: column;
+      }
+
+      .controls input,
+      .controls select {
+        width: 100%;
+        box-sizing: border-box;
       }
     }
   </style>
@@ -174,140 +229,152 @@
 
     <p class="intro">
       A growing collection of game demos I've played, what I thought about them,
-  and whether they convinced me to play the full game.
+      and whether they convinced me to play the full game.
     </p>
-    
-<div class="twitch-layout">
 
-  <div class="twitch-section">
-    <iframe
-      src="https://player.twitch.tv/?channel=klawdiatv&parent=klawdiatv.github.io"
-      allowfullscreen>
-    </iframe>
-  </div>
+    <!-- TWITCH LIVE + CHAT -->
 
-  <div class="twitch-chat">
-    <iframe
-      src="https://www.twitch.tv/embed/klawdiatv/chat?parent=klawdiatv.github.io">
-    </iframe>
-  </div>
+    <div class="twitch-layout">
 
-</div>
-    <div class="twitch-chat">
-  <iframe
-    src="https://www.twitch.tv/embed/klawdiatv/chat?parent=klawdiatv.github.io"
-    height="480"
-    width="100%">
-  </iframe>
-</di
-    <div class="summary">
-      <strong>Demos Played:</strong>
+      <div class="twitch-section">
+        <iframe
+          src="https://player.twitch.tv/?channel=klawdiatv&parent=klawdiatv.github.io"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="twitch-chat">
+        <iframe
+          src="https://www.twitch.tv/embed/klawdiatv/chat?parent=klawdiatv.github.io">
+        </iframe>
+      </div>
+
     </div>
-<div class="controls">
 
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="Search games..."
-  >
+    <!-- SUMMARY -->
 
-  <select id="impressionFilter">
-    <option value="">All Impressions</option>
-    <option value="Interesting">Interesting</option>
-    <option value="Loved It">Loved It</option>
-    <option value="Liked It">Liked It</option>
-    <option value="Not For Me">Not For Me</option>
-  </select>
+    <div class="summary">
+      <strong>Demos Played:</strong> 3
+    </div>
 
-  <select id="interestFilter">
-    <option value="">All Full Game Interest</option>
-    <option value="Definitely Playing">Definitely Playing</option>
-    <option value="Maybe">Maybe</option>
-    <option value="Not Interested">Not Interested</option>
-  </select>
+    <!-- FILTERS -->
 
-</div>
+    <div class="controls">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search games..."
+      >
+
+      <select id="impressionFilter">
+        <option value="">All Impressions</option>
+        <option value="Interesting">Interesting</option>
+        <option value="Loved It">Loved It</option>
+        <option value="Liked It">Liked It</option>
+        <option value="Not For Me">Not For Me</option>
+      </select>
+
+      <select id="interestFilter">
+        <option value="">All Full Game Interest</option>
+        <option value="Definitely Playing">Definitely Playing</option>
+        <option value="Maybe">Maybe</option>
+        <option value="Not Interested">Not Interested</option>
+      </select>
+
+    </div>
+
+    <!-- DEMO TABLE -->
+
     <table>
       <thead>
-<tr>
-  <th>Game</th>
-  <th>Platform</th>
-  <th>Date Played</th>
-  <th>Impression</th>
-  <th>Full Game Interest</th>
-  <th>Content</th>
-</tr>
+        <tr>
+          <th>Game</th>
+          <th>Platform</th>
+          <th>Date Played</th>
+          <th>Impression</th>
+          <th>Full Game Interest</th>
+          <th>Content</th>
+        </tr>
       </thead>
 
       <tbody>
-        
-       <tr>
-  <td>Terrible Lizards Demo</td>
-  <td><span class="badge steam">Steam</span></td>
-  <td>-</td>
-  <td><span class="badge liked">Interesting</span></td>
-  <td><span class="badge maybe">Maybe</span></td>
-  <td>-</td>
-</tr>
 
-<tr>
-  <td>Untold Memories: Grandma's House Demo</td>
-  <td><span class="badge steam">Steam</span></td>
-  <td>-</td>
-  <td><span class="badge liked">Interesting</span></td>
-  <td><span class="badge maybe">Maybe</span></td>
-  <td>-</td>
-</tr>
+        <tr>
+          <td>Terrible Lizards Demo</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>-</td>
+          <td><span class="badge liked">Interesting</span></td>
+          <td><span class="badge maybe">Maybe</span></td>
+          <td>-</td>
+        </tr>
 
-<tr>
-  <td>Haunted Bar Simulator 🍻</td>
-  <td><span class="badge steam">Steam</span></td>
-  <td>-</td>
-  <td><span class="badge liked">Interesting</span></td>
-  <td><span class="badge maybe">Maybe</span></td>
-  <td>-</td>
-</tr>
+        <tr>
+          <td>Untold Memories: Grandma's House Demo</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>-</td>
+          <td><span class="badge liked">Interesting</span></td>
+          <td><span class="badge maybe">Maybe</span></td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Haunted Bar Simulator 🍻</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>-</td>
+          <td><span class="badge liked">Interesting</span></td>
+          <td><span class="badge maybe">Maybe</span></td>
+          <td>-</td>
+        </tr>
 
       </tbody>
     </table>
 
   </div>
-<script>
-  
-  const searchInput = document.getElementById("searchInput");
-  const impressionFilter = document.getElementById("impressionFilter");
-  const interestFilter = document.getElementById("interestFilter");
 
-  function filterTable() {
-    const searchValue = searchInput.value.toLowerCase();
-    const impressionValue = impressionFilter.value.toLowerCase();
-    const interestValue = interestFilter.value.toLowerCase();
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const impressionFilter = document.getElementById("impressionFilter");
+    const interestFilter = document.getElementById("interestFilter");
 
-    const rows = document.querySelectorAll("tbody tr");
+    function filterTable() {
+      const searchValue = searchInput.value.toLowerCase();
+      const impressionValue = impressionFilter.value.toLowerCase();
+      const interestValue = interestFilter.value.toLowerCase();
 
-    rows.forEach(row => {
-      const game = row.cells[0].textContent.toLowerCase();
-      const impression = row.cells[3].textContent.toLowerCase();
-      const interest = row.cells[4].textContent.toLowerCase();
+      const rows = document.querySelectorAll("tbody tr");
 
-      const matchesSearch = game.includes(searchValue);
-      const matchesImpression =
-        impressionValue === "" || impression.includes(impressionValue);
-      const matchesInterest =
-        interestValue === "" || interest.includes(interestValue);
+      rows.forEach(row => {
+        const game = row.cells[0].textContent.toLowerCase();
+        const impression = row.cells[3].textContent.toLowerCase();
+        const interest = row.cells[4].textContent.toLowerCase();
 
-      if (matchesSearch && matchesImpression && matchesInterest) {
-        row.style.display = "";
-      } else {
-        row.style.display = "none";
-      }
-      
-    });
-  }
+        const matchesSearch = game.includes(searchValue);
 
-  searchInput.addEventListener("input", filterTable);
-  impressionFilter.addEventListener("change", filterTable);
-  interestFilter.addEventListener("change", filterTable);
-</script>
+        const matchesImpression =
+          impressionValue === "" ||
+          impression.includes(impressionValue);
+
+        const matchesInterest =
+          interestValue === "" ||
+          interest.includes(interestValue);
+
+        if (
+          matchesSearch &&
+          matchesImpression &&
+          matchesInterest
+        ) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    }
+
+    searchInput.addEventListener("input", filterTable);
+    impressionFilter.addEventListener("change", filterTable);
+    interestFilter.addEventListener("change", filterTable);
+  </script>
+
 </body>
 </html>
