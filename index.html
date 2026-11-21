@@ -1,12 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>KlawdiaTV - Demo Games</title>
+  <title>THE PARLOR - DEMO GAMES</title>
+
+  <!-- CINEMATIC FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 
   <style>
+
+    /* =========================
+       GENERAL PAGE DESIGN
+    ========================= */
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -27,15 +39,37 @@
       margin: 40px auto;
     }
 
+
+    /* =========================
+       PAGE TITLE
+    ========================= */
+
     h1 {
-      color: #c75cff;
-      margin-bottom: 8px;
+      font-family: 'Cinzel', serif;
+      font-size: clamp(34px, 5vw, 68px);
+      font-weight: 400;
+      letter-spacing: 5px;
+      line-height: 1.3;
+      color: #f8f4ef;
+      text-align: center;
+      margin: 15px 0 12px;
     }
 
     .intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 25px;
+      font-weight: 400;
       color: #f8f4ef;
-      margin-bottom: 30px;
+      text-align: center;
+      line-height: 1.5;
+      margin: 0 0 35px;
     }
+
+
+    /* =========================
+       TWITCH PLAYER AND CHAT
+    ========================= */
 
     .twitch-layout {
       display: grid;
@@ -59,20 +93,18 @@
       aspect-ratio: 2.2 / 1;
     }
 
-    .twitch-section iframe {
+    .twitch-section iframe,
+    .twitch-chat iframe {
       width: 100%;
       height: 100%;
       border: none;
       display: block;
     }
 
-    .twitch-chat iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 100%;
-      border: none;
-      display: block;
-    }
+
+    /* =========================
+       DEMO SUMMARY
+    ========================= */
 
     .summary {
       background: rgba(26, 35, 64, 0.96);
@@ -81,6 +113,11 @@
       padding: 18px;
       margin-bottom: 20px;
     }
+
+
+    /* =========================
+       SEARCH AND FILTERS
+    ========================= */
 
     .controls {
       display: flex;
@@ -113,6 +150,11 @@
       border-color: #7f09c2;
     }
 
+
+    /* =========================
+       DEMO TABLE
+    ========================= */
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -142,6 +184,11 @@
       background: rgba(20, 87, 141, 0.55);
     }
 
+
+    /* =========================
+       BADGES
+    ========================= */
+
     .badge {
       display: inline-block;
       padding: 5px 10px;
@@ -155,35 +202,28 @@
       color: #237125;
     }
 
-    .loved {
-      background: #d9f2c8;
-      color: #246b2c;
-    }
-
-    .liked {
-      background: #ffe5a5;
-      color: #7b5800;
-    }
-
-    .skip {
-      background: #f4b7b7;
-      color: #7b1e1e;
-    }
-
+    .loved,
     .definitely {
       background: #d9f2c8;
       color: #246b2c;
     }
 
+    .liked,
     .maybe {
       background: #ffe5a5;
       color: #7b5800;
     }
 
+    .skip,
     .nointerest {
       background: #f4b7b7;
       color: #7b1e1e;
     }
+
+
+    /* =========================
+       LINKS
+    ========================= */
 
     a {
       color: #c75cff;
@@ -194,7 +234,82 @@
       text-decoration: underline;
     }
 
+
+    /* =========================
+       DEMO REVIEWS SECTION
+    ========================= */
+
+    .reviews-section {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .reviews-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      line-height: 1.4;
+      color: #f8f4ef;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .reviews-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-style: italic;
+      color: #f8f4ef;
+      text-align: center;
+      margin: 0 0 30px;
+    }
+
+    .review-card {
+      background: rgba(26, 35, 64, 0.96);
+      border: 1px solid rgba(127, 9, 194, 0.30);
+      border-radius: 14px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .review-card summary {
+      padding: 20px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+      color: #f8f4ef;
+    }
+
+    .review-card summary:hover {
+      background: rgba(20, 87, 141, 0.35);
+    }
+
+    .review-card[open] summary {
+      border-bottom: 1px solid rgba(127, 9, 194, 0.30);
+      background: rgba(74, 45, 89, 0.35);
+    }
+
+    .review-content {
+      padding: 20px;
+      line-height: 1.8;
+      color: #f8f4ef;
+    }
+
+    .review-content p {
+      margin: 12px 0;
+    }
+
+    .review-content .badge {
+      margin-bottom: 10px;
+    }
+
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================= */
+
     @media (max-width: 1000px) {
+
       .twitch-layout {
         grid-template-columns: 1fr;
       }
@@ -203,26 +318,26 @@
         aspect-ratio: 16 / 9;
       }
 
-      .twitch-chat {
-        height: 500px;
-      }
-
+      .twitch-chat,
       .twitch-chat iframe {
         height: 500px;
       }
     }
 
     @media (max-width: 800px) {
+
       .container {
         width: 95%;
         margin: 20px auto;
       }
 
       h1 {
-        font-size: 26px;
+        font-size: clamp(28px, 7vw, 44px);
+        letter-spacing: 2px;
       }
 
       .intro {
+        font-size: 21px;
         line-height: 1.5;
       }
 
@@ -247,7 +362,42 @@
       td {
         padding: 10px;
       }
+
+      .reviews-title {
+        font-size: 28px;
+        letter-spacing: 2px;
+      }
+
+      .reviews-subtitle {
+        font-size: 21px;
+      }
+
+      .review-card summary {
+        padding: 16px;
+      }
+
+      .review-content {
+        padding: 16px;
+      }
     }
+
+    @media (max-width: 480px) {
+
+      h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+      }
+
+      .intro {
+        font-size: 19px;
+      }
+
+      .reviews-title {
+        font-size: 25px;
+        letter-spacing: 1px;
+      }
+    }
+
   </style>
 </head>
 
@@ -255,34 +405,69 @@
 
   <div class="container">
 
-    <h1>Demo Games I've Played</h1>
+
+    <!-- =========================
+         PAGE TITLE
+    ========================= -->
+
+    <h1>THE PARLOR - DEMO GAMES</h1>
 
     <p class="intro">
       A growing collection of demo games I've played,
-      what I thought about them, and whether they
-      convinced me to play the full game.
+      my first impressions, and whether they
+      convinced me to try the full game.
     </p>
+
+
+    <!-- =========================
+         TWITCH PLAYER AND CHAT
+    ========================= -->
 
     <div class="twitch-layout">
 
       <div class="twitch-section">
         <iframe
-          src="https://player.twitch.tv/?channel=klawdiatv&parent=klawdiatv.github.io"
+          src="https://player.twitch.tv/?channel=klawdiatv&amp;parent=klawdiatv.github.io"
+          title="KlawdiaTV Twitch stream"
           allowfullscreen>
         </iframe>
       </div>
 
       <div class="twitch-chat">
         <iframe
-          src="https://www.twitch.tv/embed/klawdiatv/chat?parent=klawdiatv.github.io">
+          src="https://www.twitch.tv/embed/klawdiatv/chat?parent=klawdiatv.github.io"
+          title="KlawdiaTV Twitch chat">
         </iframe>
       </div>
 
     </div>
 
+
+    <!-- =========================
+         DEMO SUMMARY
+    ========================= -->
+
     <div class="summary">
-      <strong>Demos Played:</strong> 3
+
+      <strong>Demos Played:</strong>
+      <span id="totalDemos">0</span>
+
+      &nbsp; | &nbsp;
+
+      <strong>Want Full Game:</strong>
+      <span id="wantedDemos">0</span>
+
+      &nbsp; | &nbsp;
+
+      <strong>Maybe:</strong>
+      <span id="maybeDemos">0</span>
+
     </div>
+
+
+    <!-- =========================
+         SEARCH AND FILTERS
+    ========================= -->
 
     <div class="controls">
 
@@ -290,57 +475,37 @@
         type="text"
         id="searchInput"
         placeholder="Search games..."
+        aria-label="Search games"
       >
 
-      <select id="impressionFilter">
-
-        <option value="">
-          All Impressions
-        </option>
-
-        <option value="Really Enjoyed It">
-          Really Enjoyed It
-        </option>
-
-        <option value="Interesting">
-          Interesting
-        </option>
-
-        <option value="Loved It">
-          Loved It
-        </option>
-
-        <option value="Liked It">
-          Liked It
-        </option>
-
-        <option value="Not For Me">
-          Not For Me
-        </option>
-
+      <select
+        id="impressionFilter"
+        aria-label="Filter by impression"
+      >
+        <option value="">All Impressions</option>
+        <option value="Really Enjoyed It">Really Enjoyed It</option>
+        <option value="Interesting">Interesting</option>
+        <option value="Loved It">Loved It</option>
+        <option value="Liked It">Liked It</option>
+        <option value="Not For Me">Not For Me</option>
       </select>
 
-      <select id="interestFilter">
-
-        <option value="">
-          All Full Game Interest
-        </option>
-
-        <option value="YES">
-          YES
-        </option>
-
-        <option value="Maybe">
-          Maybe
-        </option>
-
-        <option value="Not Interested">
-          Not Interested
-        </option>
-
+      <select
+        id="interestFilter"
+        aria-label="Filter by full game interest"
+      >
+        <option value="">All Full Game Interest</option>
+        <option value="YES">YES</option>
+        <option value="Maybe">Maybe</option>
+        <option value="Not Interested">Not Interested</option>
       </select>
 
     </div>
+
+
+    <!-- =========================
+         DEMO GAMES TABLE
+    ========================= -->
 
     <table>
 
@@ -357,90 +522,288 @@
 
       <tbody>
 
-<tr>
-  <td>Terrible Lizards</td>
-  <td><span class="badge steam">Steam</span></td>
-  <td>Oct 24, 2026</td>
-  <td><span class="badge liked">Interesting</span></td>
-  <td><span class="badge maybe">Maybe</span></td>
-  <td>
-    <a href="https://www.youtube.com/watch?v=jJoOBqK8P40&t=2s" target="_blank" rel="noopener noreferrer">
-      VIDEO
-    </a>
-  </td>
-</tr>
 
-<tr>
-  <td>Forsaken Fleet</td>
-  <td><span class="badge steam">Steam</span></td>
-  <td>-</td>
-  <td><span class="badge liked">Interesting</span></td>
-  <td><span class="badge maybe">Maybe</span></td>
-  <td>
-    <a href="https://www.youtube.com/watch?v=8x7tPEGAg48&t=3s" target="_blank" rel="noopener noreferrer">
-      VIDEO
-    </a>
-  </td>
-</tr>
+        <!-- DEMO 1: TERRIBLE LIZARDS -->
+
+        <tr>
+          <td>Terrible Lizards</td>
+
+          <td>
+            <span class="badge steam">Steam</span>
+          </td>
+
+          <td>Oct 24, 2026</td>
+
+          <td>
+            <span class="badge liked">Interesting</span>
+          </td>
+
+          <td>
+            <span class="badge maybe">Maybe</span>
+          </td>
+
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=jJoOBqK8P40&t=2s"
+              target="_blank"
+              rel="noopener noreferrer">
+              VIDEO
+            </a>
+          </td>
+        </tr>
+
+
+        <!-- DEMO 2: FORSAKEN FLEET -->
+
+        <tr>
+          <td>Forsaken Fleet</td>
+
+          <td>
+            <span class="badge steam">Steam</span>
+          </td>
+
+          <td>-</td>
+
+          <td>
+            <span class="badge liked">Interesting</span>
+          </td>
+
+          <td>
+            <span class="badge maybe">Maybe</span>
+          </td>
+
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=8x7tPEGAg48&t=3s"
+              target="_blank"
+              rel="noopener noreferrer">
+              VIDEO
+            </a>
+          </td>
+        </tr>
+
+
+        <!-- DEMO 3: SCAWY GAME -->
 
         <tr>
           <td>Scawy Game</td>
-          <td><span class="badge steam">Steam</span></td>
+
+          <td>
+            <span class="badge steam">Steam</span>
+          </td>
+
           <td>Nov 19, 2026</td>
-          <td><span class="badge loved">Really Enjoyed It</span></td>
-          <td><span class="badge definitely">YES</span></td>
+
+          <td>
+            <span class="badge loved">Really Enjoyed It</span>
+          </td>
+
+          <td>
+            <span class="badge definitely">YES</span>
+          </td>
+
           <td>-</td>
         </tr>
+
 
       </tbody>
 
     </table>
 
+
+    <!-- =========================
+         THE PARLOR - DEMO REVIEWS
+    ========================= -->
+
+    <section class="reviews-section">
+
+      <h2 class="reviews-title">
+        THE PARLOR — DEMO REVIEWS
+      </h2>
+
+      <p class="reviews-subtitle">
+        My first impressions, personal experiences
+        &amp; thoughts on each demo.
+      </p>
+
+
+      <!-- REVIEW 1: TERRIBLE LIZARDS -->
+
+      <details class="review-card">
+
+        <summary>
+          Terrible Lizards
+        </summary>
+
+        <div class="review-content">
+
+          <span class="badge liked">
+            Interesting
+          </span>
+
+          <p>
+            My personal review of Terrible Lizards
+            will go here.
+          </p>
+
+        </div>
+
+      </details>
+
+
+      <!-- REVIEW 2: FORSAKEN FLEET -->
+
+      <details class="review-card">
+
+        <summary>
+          Forsaken Fleet
+        </summary>
+
+        <div class="review-content">
+
+          <span class="badge liked">
+            Interesting
+          </span>
+
+          <p>
+            My personal review of Forsaken Fleet
+            will go here.
+          </p>
+
+        </div>
+
+      </details>
+
+
+      <!-- REVIEW 3: SCAWY GAME -->
+
+      <details class="review-card">
+
+        <summary>
+          Scawy Game
+        </summary>
+
+        <div class="review-content">
+
+          <span class="badge loved">
+            Really Enjoyed It
+          </span>
+
+          <p>
+            My personal review of Scawy Game
+            will go here.
+          </p>
+
+        </div>
+
+      </details>
+
+
+    </section>
+
   </div>
 
+
+  <!-- =========================
+       SEARCH, FILTER AND COUNTERS
+  ========================= -->
+
   <script>
-    const searchInput = document.getElementById("searchInput");
-    const impressionFilter = document.getElementById("impressionFilter");
-    const interestFilter = document.getElementById("interestFilter");
+
+    const searchInput =
+      document.getElementById("searchInput");
+
+    const impressionFilter =
+      document.getElementById("impressionFilter");
+
+    const interestFilter =
+      document.getElementById("interestFilter");
+
+    const rows =
+      Array.from(document.querySelectorAll("tbody tr"));
+
+
+    // AUTOMATIC DEMO COUNTERS
+
+    document.getElementById("totalDemos").textContent =
+      rows.length;
+
+    document.getElementById("wantedDemos").textContent =
+      rows.filter(row =>
+        row.cells[4].textContent.trim() === "YES"
+      ).length;
+
+    document.getElementById("maybeDemos").textContent =
+      rows.filter(row =>
+        row.cells[4].textContent.trim() === "Maybe"
+      ).length;
+
+
+    // SEARCH AND FILTER FUNCTION
 
     function filterTable() {
-      const searchValue = searchInput.value.toLowerCase();
-      const impressionValue = impressionFilter.value.toLowerCase();
-      const interestValue = interestFilter.value.toLowerCase();
 
-      const rows = document.querySelectorAll("tbody tr");
+      const searchValue =
+        searchInput.value.trim().toLowerCase();
+
+      const impressionValue =
+        impressionFilter.value.toLowerCase();
+
+      const interestValue =
+        interestFilter.value.toLowerCase();
+
 
       rows.forEach(row => {
-        const game = row.cells[0].textContent.toLowerCase();
-        const impression = row.cells[3].textContent.toLowerCase();
-        const interest = row.cells[4].textContent.toLowerCase();
+
+        const game =
+          row.cells[0].textContent.toLowerCase();
+
+        const impression =
+          row.cells[3].textContent.trim().toLowerCase();
+
+        const interest =
+          row.cells[4].textContent.trim().toLowerCase();
+
 
         const matchesSearch =
           game.includes(searchValue);
 
         const matchesImpression =
-          impressionValue === "" ||
-          impression.includes(impressionValue);
+          !impressionValue ||
+          impression === impressionValue;
 
         const matchesInterest =
-          interestValue === "" ||
-          interest.includes(interestValue);
+          !interestValue ||
+          interest === interestValue;
 
-        if (
+
+        row.style.display =
           matchesSearch &&
           matchesImpression &&
           matchesInterest
-        ) {
-          row.style.display = "";
-        } else {
-          row.style.display = "none";
-        }
+          ? ""
+          : "none";
+
       });
+
     }
 
-    searchInput.addEventListener("input", filterTable);
-    impressionFilter.addEventListener("change", filterTable);
-    interestFilter.addEventListener("change", filterTable);
+
+    searchInput.addEventListener(
+      "input",
+      filterTable
+    );
+
+    impressionFilter.addEventListener(
+      "change",
+      filterTable
+    );
+
+    interestFilter.addEventListener(
+      "change",
+      filterTable
+    );
+
   </script>
 
 </body>
