@@ -8,28 +8,23 @@
   <title>THE PARLOR - DEMO GAMES</title>
 
   <!-- CINEMATIC FONTS -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 
   <style>
 
-    /* =========================
-       GENERAL PAGE DESIGN
-    ========================= */
+    /* GENERAL PAGE DESIGN */
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-
       background:
         linear-gradient(
           rgba(12, 12, 20, 0.90),
           rgba(12, 12, 20, 0.90)
         ),
         url("background.png") center center / cover fixed;
-
       color: #f8f4ef;
     }
 
@@ -39,10 +34,7 @@
       margin: 40px auto;
     }
 
-
-    /* =========================
-       PAGE TITLE
-    ========================= */
+    /* PAGE TITLE */
 
     h1 {
       font-family: 'Cinzel', serif;
@@ -66,10 +58,7 @@
       margin: 0 0 35px;
     }
 
-
-    /* =========================
-       TWITCH PLAYER AND CHAT
-    ========================= */
+    /* TWITCH PLAYER AND CHAT */
 
     .twitch-layout {
       display: grid;
@@ -101,10 +90,7 @@
       display: block;
     }
 
-
-    /* =========================
-       DEMO SUMMARY
-    ========================= */
+    /* DEMO SUMMARY */
 
     .summary {
       background: rgba(26, 35, 64, 0.96);
@@ -114,10 +100,7 @@
       margin-bottom: 20px;
     }
 
-
-    /* =========================
-       SEARCH AND FILTERS
-    ========================= */
+    /* SEARCH AND FILTERS */
 
     .controls {
       display: flex;
@@ -150,10 +133,7 @@
       border-color: #7f09c2;
     }
 
-
-    /* =========================
-       DEMO TABLE
-    ========================= */
+    /* DEMO TABLE */
 
     table {
       width: 100%;
@@ -184,10 +164,7 @@
       background: rgba(20, 87, 141, 0.55);
     }
 
-
-    /* =========================
-       BADGES
-    ========================= */
+    /* BADGES */
 
     .badge {
       display: inline-block;
@@ -220,10 +197,12 @@
       color: #7b1e1e;
     }
 
+    .pending {
+      background: #ddd5e7;
+      color: #42334f;
+    }
 
-    /* =========================
-       LINKS
-    ========================= */
+    /* LINKS */
 
     a {
       color: #c75cff;
@@ -234,10 +213,7 @@
       text-decoration: underline;
     }
 
-
-    /* =========================
-       DEMO REVIEWS SECTION
-    ========================= */
+    /* DEMO REVIEWS SECTION */
 
     .reviews-section {
       margin-top: 50px;
@@ -303,10 +279,7 @@
       margin-bottom: 10px;
     }
 
-
-    /* =========================
-       RESPONSIVE DESIGN
-    ========================= */
+    /* RESPONSIVE DESIGN */
 
     @media (max-width: 1000px) {
 
@@ -405,10 +378,7 @@
 
   <div class="container">
 
-
-    <!-- =========================
-         PAGE TITLE
-    ========================= -->
+    <!-- PAGE TITLE -->
 
     <h1>THE PARLOR - DEMO GAMES</h1>
 
@@ -418,10 +388,7 @@
       convinced me to try the full game.
     </p>
 
-
-    <!-- =========================
-         TWITCH PLAYER AND CHAT
-    ========================= -->
+    <!-- TWITCH PLAYER AND CHAT -->
 
     <div class="twitch-layout">
 
@@ -442,10 +409,7 @@
 
     </div>
 
-
-    <!-- =========================
-         DEMO SUMMARY
-    ========================= -->
+    <!-- DEMO SUMMARY -->
 
     <div class="summary">
 
@@ -464,10 +428,7 @@
 
     </div>
 
-
-    <!-- =========================
-         SEARCH AND FILTERS
-    ========================= -->
+    <!-- SEARCH AND FILTERS -->
 
     <div class="controls">
 
@@ -488,6 +449,7 @@
         <option value="Loved It">Loved It</option>
         <option value="Liked It">Liked It</option>
         <option value="Not For Me">Not For Me</option>
+        <option value="Not rated yet">Not rated yet</option>
       </select>
 
       <select
@@ -498,14 +460,12 @@
         <option value="YES">YES</option>
         <option value="Maybe">Maybe</option>
         <option value="Not Interested">Not Interested</option>
+        <option value="Not decided">Not decided</option>
       </select>
 
     </div>
 
-
-    <!-- =========================
-         DEMO GAMES TABLE
-    ========================= -->
+    <!-- DEMO GAMES TABLE -->
 
     <table>
 
@@ -521,7 +481,6 @@
       </thead>
 
       <tbody>
-
 
         <!-- DEMO 1: TERRIBLE LIZARDS -->
 
@@ -552,7 +511,6 @@
           </td>
         </tr>
 
-
         <!-- DEMO 2: FORSAKEN FLEET -->
 
         <tr>
@@ -582,7 +540,6 @@
           </td>
         </tr>
 
-
         <!-- DEMO 3: SCAWY GAME -->
 
         <tr>
@@ -605,15 +562,47 @@
           <td>-</td>
         </tr>
 
+        <!-- DEMO 4: DIRTY LAUNDRY -->
+
+        <tr>
+          <td>Dirty Laundry</td>
+          <td>—</td>
+          <td>Nov 26, 2026</td>
+
+          <td>
+            <span class="badge pending">Not rated yet</span>
+          </td>
+
+          <td>
+            <span class="badge pending">Not decided</span>
+          </td>
+
+          <td>—</td>
+        </tr>
+
+        <!-- DEMO 5: THE INFINITE SHIFT: BACKROOMS -->
+
+        <tr>
+          <td>The Infinite Shift: Backrooms</td>
+          <td>—</td>
+          <td>Nov 26, 2026</td>
+
+          <td>
+            <span class="badge pending">Not rated yet</span>
+          </td>
+
+          <td>
+            <span class="badge pending">Not decided</span>
+          </td>
+
+          <td>—</td>
+        </tr>
 
       </tbody>
 
     </table>
 
-
-    <!-- =========================
-         THE PARLOR - DEMO REVIEWS
-    ========================= -->
+    <!-- THE PARLOR - DEMO REVIEWS -->
 
     <section class="reviews-section">
 
@@ -626,80 +615,115 @@
         &amp; thoughts on each demo.
       </p>
 
-
       <!-- REVIEW 1: TERRIBLE LIZARDS -->
 
       <details class="review-card">
 
-        <summary>
-          Terrible Lizards
-        </summary>
+        <summary>Terrible Lizards</summary>
 
         <div class="review-content">
 
-          <span class="badge liked">
-            Interesting
-          </span>
+          <span class="badge liked">Interesting</span>
 
           <p>
-Terrible Lizards was a surprisingly interesting demo! I really enjoyed the gameplay, especially the variety of tasks and puzzles you have to complete while trying to survive.
+            Terrible Lizards was a surprisingly interesting demo!
+            I really enjoyed the gameplay, especially the variety
+            of tasks and puzzles you have to complete while trying
+            to survive.
 
-The dinosaurs chasing you are absolutely terrifying, and the parkour mechanics made the experience even more exciting. I loved having to move around, figure things out, and occasionally run for my life!
+            The dinosaurs chasing you are absolutely terrifying,
+            and the parkour mechanics made the experience even more
+            exciting. I loved having to move around, figure things
+            out, and occasionally run for my life!
 
-However, there's one thing I wasn't a big fan of: the amount of reading. There are so many notes and documents scattered around, and some contain way too much text. I understand they're there to explain the story, but honestly, who's going to stop and read an entire novel when there are dinosaurs trying to eat you?
+            However, there's one thing I wasn't a big fan of:
+            the amount of reading. There are so many notes and
+            documents scattered around, and some contain way
+            too much text. I understand they're there to explain
+            the story, but honestly, who's going to stop and read
+            an entire novel when there are dinosaurs trying to
+            eat you?
 
-I would have preferred the story to be delivered in a more engaging way rather than through so many lengthy documents.
+            I would have preferred the story to be delivered in
+            a more engaging way rather than through so many
+            lengthy documents.
 
-Despite that, I had a great time with the demo. The gameplay was fun, the puzzles were interesting, and the combination of dinosaurs, exploration, and parkour worked really well.
+            Despite that, I had a great time with the demo.
+            The gameplay was fun, the puzzles were interesting,
+            and the combination of dinosaurs, exploration,
+            and parkour worked really well.
 
-Final impression: Interesting. An entertaining and promising demo with some great gameplay mechanics. I'm definitely interested in seeing more, and there's a good chance I'll give the full game a try someday!
+            Final impression: Interesting.
+            An entertaining and promising demo with some
+            great gameplay mechanics. I'm definitely interested
+            in seeing more, and there's a good chance I'll
+            give the full game a try someday!
           </p>
 
         </div>
 
       </details>
-
 
       <!-- REVIEW 2: FORSAKEN FLEET -->
 
       <details class="review-card">
 
-        <summary>
-          Forsaken Fleet
-        </summary>
+        <summary>Forsaken Fleet</summary>
 
         <div class="review-content">
 
-          <span class="badge liked">
-            Interesting
-          </span>
+          <span class="badge liked">Interesting</span>
 
           <p>
-Forsaken Fleet was a really interesting horror experience, but apparently my trauma from The Lightkeeper wasn't enough, because THE CROWS AND SEAGULLS ARE BACK! Seriously, why do these games keep finding me? What did I ever do to these birds?!
+            Forsaken Fleet was a really interesting horror
+            experience, but apparently my trauma from
+            The Lightkeeper wasn't enough, because
+            THE CROWS AND SEAGULLS ARE BACK!
+            Seriously, why do these games keep finding me?
+            What did I ever do to these birds?!
 
-The game does a great job of combining a creepy atmosphere with some well-placed jumpscares and that constant feeling that something terrible is about to happen. Even the smallest sounds made me nervous, and I found myself getting scared by things that probably weren't even dangerous.
+            The game does a great job of combining a creepy
+            atmosphere with some well-placed jumpscares and
+            that constant feeling that something terrible
+            is about to happen. Even the smallest sounds
+            made me nervous, and I found myself getting
+            scared by things that probably weren't even
+            dangerous.
 
-And then there are the creatures chasing you. Absolutely terrifying!
+            And then there are the creatures chasing you.
+            Absolutely terrifying!
 
-Small spoiler ahead: Apparently, being stranded in a creepy place wasn't bad enough. Now we have zombie-like pirates wandering around, looking for their next meal. And guess who's on the menu? ME, OF COURSE!
+            Small spoiler ahead: Apparently, being stranded
+            in a creepy place wasn't bad enough.
+            Now we have zombie-like pirates wandering around,
+            looking for their next meal. And guess who's
+            on the menu? ME, OF COURSE!
 
-I really liked how the game builds tension through its environment rather than relying entirely on jumpscares. The atmosphere keeps you uncomfortable, and when something finally happens, it hits even harder.
+            I really liked how the game builds tension
+            through its environment rather than relying
+            entirely on jumpscares. The atmosphere keeps
+            you uncomfortable, and when something finally
+            happens, it hits even harder.
 
-Final impression: Interesting. A creepy and entertaining horror demo with some great scares, terrifying creatures, and an atmosphere that keeps you constantly on edge. I'm interested in seeing what the full game has to offer, although I'd really appreciate it if the birds could leave me alone for once!
+            Final impression: Interesting.
+            A creepy and entertaining horror demo with
+            some great scares, terrifying creatures,
+            and an atmosphere that keeps you constantly
+            on edge. I'm interested in seeing what
+            the full game has to offer, although I'd
+            really appreciate it if the birds could
+            leave me alone for once!
           </p>
 
         </div>
 
       </details>
 
-
       <!-- REVIEW 3: SCAWY GAME -->
 
       <details class="review-card">
 
-        <summary>
-          Scawy Game
-        </summary>
+        <summary>Scawy Game</summary>
 
         <div class="review-content">
 
@@ -708,30 +732,92 @@ Final impression: Interesting. A creepy and entertaining horror demo with some g
           </span>
 
           <p>
-FINALLY! A horror game that starts during the day! I was beginning to think horror developers had forgotten the sun existed. Of course, the scary stuff still happens at night, because apparently we're not allowed to feel safe for too long.
+            FINALLY! A horror game that starts during the day!
+            I was beginning to think horror developers had
+            forgotten the sun existed. Of course, the scary
+            stuff still happens at night, because apparently
+            we're not allowed to feel safe for too long.
 
-Scawy Game was such a fun experience! It had a little bit of everything: jumpscares that actually got me, ridiculously funny moments, weird characters, ghosts, possessed people, and, of course, THE ALMIGHTY BASEMENT! Because what would a horror game be without a creepy basement where absolutely nothing good can happen?
+            Scawy Game was such a fun experience!
+            It had a little bit of everything: jumpscares
+            that actually got me, ridiculously funny moments,
+            weird characters, ghosts, possessed people,
+            and, of course, THE ALMIGHTY BASEMENT!
+            Because what would a horror game be without
+            a creepy basement where absolutely nothing
+            good can happen?
 
-What I loved most was how the game managed to mix horror with humor. One moment I was laughing at something completely ridiculous, and the next I was questioning every decision that had brought me there.
+            What I loved most was how the game managed
+            to mix horror with humor. One moment I was
+            laughing at something completely ridiculous,
+            and the next I was questioning every decision
+            that had brought me there.
 
-The combination of creepy situations, bizarre characters, and unexpected funny moments made the whole experience incredibly entertaining. It wasn't just about being scared; it was about having fun while being scared!
+            The combination of creepy situations,
+            bizarre characters, and unexpected funny
+            moments made the whole experience incredibly
+            entertaining. It wasn't just about being
+            scared; it was about having fun while
+            being scared!
 
-Final impression: Really Enjoyed It. A fantastic mix of horror, humor, weirdness, and chaos. I had an amazing time with this demo, and I'm definitely playing the full game when I get the chance!
+            Final impression: Really Enjoyed It.
+            A fantastic mix of horror, humor, weirdness,
+            and chaos. I had an amazing time with this
+            demo, and I'm definitely playing the full
+            game when I get the chance!
           </p>
 
         </div>
 
       </details>
 
+      <!-- REVIEW 4: DIRTY LAUNDRY -->
+
+      <details class="review-card">
+
+        <summary>Dirty Laundry</summary>
+
+        <div class="review-content">
+
+          <span class="badge pending">
+            Not rated yet
+          </span>
+
+          <p>
+            Played on November 26, 2026.
+            My review is coming soon.
+          </p>
+
+        </div>
+
+      </details>
+
+      <!-- REVIEW 5: THE INFINITE SHIFT: BACKROOMS -->
+
+      <details class="review-card">
+
+        <summary>The Infinite Shift: Backrooms</summary>
+
+        <div class="review-content">
+
+          <span class="badge pending">
+            Not rated yet
+          </span>
+
+          <p>
+            Played on November 26, 2026.
+            My review is coming soon.
+          </p>
+
+        </div>
+
+      </details>
 
     </section>
 
   </div>
 
-
-  <!-- =========================
-       SEARCH, FILTER AND COUNTERS
-  ========================= -->
+  <!-- SEARCH, FILTER AND COUNTERS -->
 
   <script>
 
@@ -746,7 +832,6 @@ Final impression: Really Enjoyed It. A fantastic mix of horror, humor, weirdness
 
     const rows =
       Array.from(document.querySelectorAll("tbody tr"));
-
 
     // AUTOMATIC DEMO COUNTERS
 
@@ -763,7 +848,6 @@ Final impression: Really Enjoyed It. A fantastic mix of horror, humor, weirdness
         row.cells[4].textContent.trim() === "Maybe"
       ).length;
 
-
     // SEARCH AND FILTER FUNCTION
 
     function filterTable() {
@@ -777,7 +861,6 @@ Final impression: Really Enjoyed It. A fantastic mix of horror, humor, weirdness
       const interestValue =
         interestFilter.value.toLowerCase();
 
-
       rows.forEach(row => {
 
         const game =
@@ -788,7 +871,6 @@ Final impression: Really Enjoyed It. A fantastic mix of horror, humor, weirdness
 
         const interest =
           row.cells[4].textContent.trim().toLowerCase();
-
 
         const matchesSearch =
           game.includes(searchValue);
@@ -801,7 +883,6 @@ Final impression: Really Enjoyed It. A fantastic mix of horror, humor, weirdness
           !interestValue ||
           interest === interestValue;
 
-
         row.style.display =
           matchesSearch &&
           matchesImpression &&
@@ -812,7 +893,6 @@ Final impression: Really Enjoyed It. A fantastic mix of horror, humor, weirdness
       });
 
     }
-
 
     searchInput.addEventListener(
       "input",
