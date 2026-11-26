@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0c14">
+  <meta name="description" content="The Parlor demo game archive. Explore KlawdiaTV's first impressions, reviews, gameplay videos, and full game interest.">
 
-  <title>THE PARLOR - DEMO GAMES</title>
+  <title>The Parlor — Demo Games</title>
 
   <!-- CINEMATIC FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +15,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    /* GENERAL PAGE DESIGN */
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -25,6 +32,7 @@
           rgba(12, 12, 20, 0.90)
         ),
         url("background.png") center center / cover fixed;
+      background-color: #0c0c14;
       color: #f8f4ef;
     }
 
@@ -34,7 +42,9 @@
       margin: 40px auto;
     }
 
-    /* PAGE TITLE */
+    /* =========================
+       PAGE TITLE
+    ========================= */
 
     h1 {
       font-family: 'Cinzel', serif;
@@ -42,7 +52,6 @@
       font-weight: 400;
       letter-spacing: 5px;
       line-height: 1.3;
-      color: #f8f4ef;
       text-align: center;
       margin: 15px 0 12px;
     }
@@ -52,13 +61,14 @@
       font-style: italic;
       font-size: 25px;
       font-weight: 400;
-      color: #f8f4ef;
       text-align: center;
       line-height: 1.5;
       margin: 0 0 35px;
     }
 
-    /* TWITCH PLAYER AND CHAT */
+    /* =========================
+       TWITCH PLAYER AND CHAT
+    ========================= */
 
     .twitch-layout {
       display: grid;
@@ -90,7 +100,9 @@
       display: block;
     }
 
-    /* DEMO SUMMARY */
+    /* =========================
+       DEMO SUMMARY
+    ========================= */
 
     .summary {
       background: rgba(26, 35, 64, 0.96);
@@ -98,9 +110,12 @@
       border-radius: 14px;
       padding: 18px;
       margin-bottom: 20px;
+      line-height: 2;
     }
 
-    /* SEARCH AND FILTERS */
+    /* =========================
+       SEARCH AND FILTERS
+    ========================= */
 
     .controls {
       display: flex;
@@ -129,18 +144,23 @@
 
     .controls input:focus,
     .controls select:focus {
-      outline: none;
-      border-color: #7f09c2;
+      outline: 2px solid #7f09c2;
+      outline-offset: 2px;
     }
 
-    /* DEMO TABLE */
+    /* =========================
+       DEMO TABLE
+    ========================= */
+
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 14px;
+    }
 
     table {
       width: 100%;
       border-collapse: collapse;
       background: rgba(26, 35, 64, 0.96);
-      border-radius: 14px;
-      overflow: hidden;
     }
 
     th {
@@ -148,6 +168,7 @@
       color: #f8f4ef;
       text-align: left;
       padding: 14px;
+      white-space: nowrap;
     }
 
     td {
@@ -164,7 +185,9 @@
       background: rgba(20, 87, 141, 0.55);
     }
 
-    /* BADGES */
+    /* =========================
+       BADGES
+    ========================= */
 
     .badge {
       display: inline-block;
@@ -172,6 +195,7 @@
       border-radius: 999px;
       font-size: 13px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     .steam {
@@ -207,7 +231,9 @@
       color: #42334f;
     }
 
-    /* LINKS */
+    /* =========================
+       LINKS
+    ========================= */
 
     a {
       color: #c75cff;
@@ -218,7 +244,14 @@
       text-decoration: underline;
     }
 
-    /* DEMO REVIEWS SECTION */
+    a:focus-visible {
+      outline: 2px solid #c75cff;
+      outline-offset: 3px;
+    }
+
+    /* =========================
+       DEMO REVIEWS
+    ========================= */
 
     .reviews-section {
       margin-top: 50px;
@@ -231,7 +264,6 @@
       font-weight: 400;
       letter-spacing: 3px;
       line-height: 1.4;
-      color: #f8f4ef;
       text-align: center;
       margin-bottom: 10px;
     }
@@ -240,7 +272,6 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 24px;
       font-style: italic;
-      color: #f8f4ef;
       text-align: center;
       margin: 0 0 30px;
     }
@@ -273,7 +304,6 @@
     .review-content {
       padding: 20px;
       line-height: 1.8;
-      color: #f8f4ef;
     }
 
     .review-content p {
@@ -284,10 +314,17 @@
       margin-bottom: 10px;
     }
 
-    /* RESPONSIVE DESIGN */
+    .review-content h3 {
+      font-size: 18px;
+      color: #d4a4ff;
+      margin: 10px 0 16px;
+    }
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================= */
 
     @media (max-width: 1000px) {
-
       .twitch-layout {
         grid-template-columns: 1fr;
       }
@@ -303,7 +340,6 @@
     }
 
     @media (max-width: 800px) {
-
       .container {
         width: 95%;
         margin: 20px auto;
@@ -316,7 +352,6 @@
 
       .intro {
         font-size: 21px;
-        line-height: 1.5;
       }
 
       .controls {
@@ -326,18 +361,14 @@
       .controls input,
       .controls select {
         width: 100%;
-        box-sizing: border-box;
       }
 
       table {
         font-size: 14px;
-        display: block;
-        overflow-x: auto;
         white-space: nowrap;
       }
 
-      th,
-      td {
+      th, td {
         padding: 10px;
       }
 
@@ -350,17 +381,13 @@
         font-size: 21px;
       }
 
-      .review-card summary {
-        padding: 16px;
-      }
-
+      .review-card summary,
       .review-content {
         padding: 16px;
       }
     }
 
     @media (max-width: 480px) {
-
       h1 {
         font-size: 28px;
         letter-spacing: 1px;
@@ -375,7 +402,6 @@
         letter-spacing: 1px;
       }
     }
-
   </style>
 </head>
 
@@ -383,7 +409,9 @@
 
   <div class="container">
 
-    <!-- PAGE TITLE -->
+    <!-- =========================
+         PAGE TITLE
+    ========================= -->
 
     <h1>THE PARLOR - DEMO GAMES</h1>
 
@@ -393,7 +421,9 @@
       convinced me to try the full game.
     </p>
 
-    <!-- TWITCH PLAYER AND CHAT -->
+    <!-- =========================
+         TWITCH PLAYER AND CHAT
+    ========================= -->
 
     <div class="twitch-layout">
 
@@ -414,7 +444,9 @@
 
     </div>
 
-    <!-- DEMO SUMMARY -->
+    <!-- =========================
+         DEMO SUMMARY
+    ========================= -->
 
     <div class="summary">
 
@@ -433,7 +465,9 @@
 
     </div>
 
-    <!-- SEARCH AND FILTERS -->
+    <!-- =========================
+         SEARCH AND FILTERS
+    ========================= -->
 
     <div class="controls">
 
@@ -471,160 +505,143 @@
 
     </div>
 
-    <!-- DEMO GAMES TABLE -->
+    <!-- =========================
+         DEMO GAMES TABLE
+    ========================= -->
 
-    <table>
+    <div class="table-wrapper">
+      <table>
 
-      <thead>
-        <tr>
-          <th>Game</th>
-          <th>Platform</th>
-          <th>Date Played</th>
-          <th>Impression</th>
-          <th>Full Game Interest</th>
-          <th>Content</th>
-        </tr>
-      </thead>
+        <thead>
+          <tr>
+            <th>Game</th>
+            <th>Platform</th>
+            <th>Date Played</th>
+            <th>Impression</th>
+            <th>Full Game Interest</th>
+            <th>Content</th>
+          </tr>
+        </thead>
 
-      <tbody>
+        <tbody>
 
-        <!-- DEMO 1: TERRIBLE LIZARDS -->
+          <!-- DEMO 1: TERRIBLE LIZARDS -->
 
-        <tr>
-          <td>Terrible Lizards</td>
+          <tr>
+            <td>Terrible Lizards</td>
+            <td>
+              <span class="badge steam">Steam</span>
+            </td>
+            <td>Oct 24, 2026</td>
+            <td>
+              <span class="badge liked">Interesting</span>
+            </td>
+            <td>
+              <span class="badge maybe">Maybe</span>
+            </td>
+            <td>
+              <a
+                href="https://www.youtube.com/watch?v=jJoOBqK8P40&amp;t=2s"
+                target="_blank"
+                rel="noopener noreferrer">
+                VIDEO
+              </a>
+            </td>
+          </tr>
 
-          <td>
-            <span class="badge steam">Steam</span>
-          </td>
+          <!-- DEMO 2: FORSAKEN FLEET -->
 
-          <td>Oct 24, 2026</td>
+          <tr>
+            <td>Forsaken Fleet</td>
+            <td>
+              <span class="badge steam">Steam</span>
+            </td>
+            <td>Oct 23, 2026</td>
+            <td>
+              <span class="badge liked">Interesting</span>
+            </td>
+            <td>
+              <span class="badge maybe">Maybe</span>
+            </td>
+            <td>
+              <a
+                href="https://www.youtube.com/watch?v=8x7tPEGAg48&amp;t=3s"
+                target="_blank"
+                rel="noopener noreferrer">
+                VIDEO
+              </a>
+            </td>
+          </tr>
 
-          <td>
-            <span class="badge liked">Interesting</span>
-          </td>
+          <!-- DEMO 3: SCAWY GAME -->
 
-          <td>
-            <span class="badge maybe">Maybe</span>
-          </td>
+          <tr>
+            <td>Scawy Game</td>
+            <td>
+              <span class="badge steam">Steam</span>
+            </td>
+            <td>Nov 19, 2026</td>
+            <td>
+              <span class="badge loved">
+                Really Enjoyed It
+              </span>
+            </td>
+            <td>
+              <span class="badge definitely">YES</span>
+            </td>
+            <td>—</td>
+          </tr>
 
-          <td>
-            <a
-              href="https://www.youtube.com/watch?v=jJoOBqK8P40&amp;t=2s"
-              target="_blank"
-              rel="noopener noreferrer">
-              VIDEO
-            </a>
-          </td>
-        </tr>
+          <!-- DEMO 4: DIRTY LAUNDRY -->
 
-        <!-- DEMO 2: FORSAKEN FLEET -->
+          <tr>
+            <td>Dirty Laundry</td>
+            <td>
+              <span class="badge steam">Steam</span>
+            </td>
+            <td>Nov 26, 2026</td>
+            <td>
+              <span class="badge disliked">
+                I Did Not Like It
+              </span>
+            </td>
+            <td>
+              <span class="badge nointerest">
+                Not Interested
+              </span>
+            </td>
+            <td>—</td>
+          </tr>
 
-        <tr>
-          <td>Forsaken Fleet</td>
+          <!-- DEMO 5: THE INFINITE SHIFT: BACKROOMS -->
 
-          <td>
-            <span class="badge steam">Steam</span>
-          </td>
+          <tr>
+            <td>The Infinite Shift: Backrooms</td>
+            <td>
+              <span class="badge steam">Steam</span>
+            </td>
+            <td>Nov 26, 2026</td>
+            <td>
+              <span class="badge liked">
+                Liked It
+              </span>
+            </td>
+            <td>
+              <span class="badge maybe">
+                Maybe
+              </span>
+            </td>
+            <td>—</td>
+          </tr>
 
-          <td>Oct 23, 2026</td>
+        </tbody>
 
-          <td>
-            <span class="badge liked">Interesting</span>
-          </td>
+      </table>
+    </div>
 
-          <td>
-            <span class="badge maybe">Maybe</span>
-          </td>
-
-          <td>
-            <a
-              href="https://www.youtube.com/watch?v=8x7tPEGAg48&amp;t=3s"
-              target="_blank"
-              rel="noopener noreferrer">
-              VIDEO
-            </a>
-          </td>
-        </tr>
-
-        <!-- DEMO 3: SCAWY GAME -->
-
-        <tr>
-          <td>Scawy Game</td>
-
-          <td>
-            <span class="badge steam">Steam</span>
-          </td>
-
-          <td>Nov 19, 2026</td>
-
-          <td>
-            <span class="badge loved">Really Enjoyed It</span>
-          </td>
-
-          <td>
-            <span class="badge definitely">YES</span>
-          </td>
-
-          <td>—</td>
-        </tr>
-
-        <!-- DEMO 4: DIRTY LAUNDRY -->
-
-        <tr>
-          <td>Dirty Laundry</td>
-
-          <!-- UPDATED PLATFORM -->
-          <td>
-            <span class="badge steam">Steam</span>
-          </td>
-
-          <td>Nov 26, 2026</td>
-
-          <td>
-            <span class="badge disliked">
-              I Did Not Like It
-            </span>
-          </td>
-
-          <!-- UPDATED FULL GAME INTEREST -->
-          <td>
-            <span class="badge nointerest">
-              Not Interested
-            </span>
-          </td>
-
-          <td>—</td>
-        </tr>
-
-        <!-- DEMO 5: THE INFINITE SHIFT: BACKROOMS -->
-
-        <tr>
-          <td>The Infinite Shift: Backrooms</td>
-
-          <td>—</td>
-
-          <td>Nov 26, 2026</td>
-
-          <td>
-            <span class="badge pending">
-              Not rated yet
-            </span>
-          </td>
-
-          <td>
-            <span class="badge pending">
-              Not decided
-            </span>
-          </td>
-
-          <td>—</td>
-        </tr>
-
-      </tbody>
-
-    </table>
-
-    <!-- THE PARLOR - DEMO REVIEWS -->
+    <!-- =========================
+         THE PARLOR - DEMO REVIEWS
+    ========================= -->
 
     <section class="reviews-section">
 
@@ -637,7 +654,9 @@
         &amp; thoughts on each demo.
       </p>
 
-      <!-- REVIEW 1: TERRIBLE LIZARDS -->
+      <!-- =========================
+           REVIEW 1: TERRIBLE LIZARDS
+      ========================= -->
 
       <details class="review-card">
 
@@ -698,7 +717,9 @@
 
       </details>
 
-      <!-- REVIEW 2: FORSAKEN FLEET -->
+      <!-- =========================
+           REVIEW 2: FORSAKEN FLEET
+      ========================= -->
 
       <details class="review-card">
 
@@ -765,7 +786,9 @@
 
       </details>
 
-      <!-- REVIEW 3: SCAWY GAME -->
+      <!-- =========================
+           REVIEW 3: SCAWY GAME
+      ========================= -->
 
       <details class="review-card">
 
@@ -825,7 +848,9 @@
 
       </details>
 
-      <!-- REVIEW 4: DIRTY LAUNDRY -->
+      <!-- =========================
+           REVIEW 4: DIRTY LAUNDRY
+      ========================= -->
 
       <details class="review-card">
 
@@ -889,7 +914,10 @@
 
       </details>
 
-      <!-- REVIEW 5: THE INFINITE SHIFT: BACKROOMS -->
+      <!-- =========================
+           REVIEW 5: THE INFINITE SHIFT: BACKROOMS
+           SPOILER-FREE REVIEW
+      ========================= -->
 
       <details class="review-card">
 
@@ -899,13 +927,66 @@
 
         <div class="review-content">
 
-          <span class="badge pending">
-            Not rated yet
+          <span class="badge liked">
+            Liked It
           </span>
 
+          <h3>
+            I Came to Explore, Not to Be Hunted!
+          </h3>
+
           <p>
-            Played on November 26, 2026.
-            My review is coming soon.
+            The Infinite Shift: Backrooms was almost an
+            hour long, and I actually had a really good
+            time with it! It was creepy, stressful,
+            and kept me on my toes pretty much
+            the entire time.
+          </p>
+
+          <p>
+            The atmosphere was unsettling, and the
+            constant feeling that something was lurking
+            nearby made even the simplest tasks stressful.
+            And trust me, there were definitely things
+            I did NOT want to run into!
+          </p>
+
+          <p>
+            The monsters were creepy, but some of their
+            movements were unintentionally hilarious.
+            At one point, I swear I was being chased
+            by something that moved like a rabbit
+            straight out of Looney Tunes!
+            One second I thought I was safe,
+            and the next I was running for my life.
+          </p>
+
+          <p>
+            What I particularly enjoyed was the combination
+            of exploration, puzzles, and survival.
+            The game kept giving me things to figure out
+            while making sure I never felt completely safe.
+            I had to pay attention to my surroundings,
+            think about my next move, and occasionally
+            panic when things didn't go according to plan.
+          </p>
+
+          <p>
+            I also liked how the demo kept introducing
+            new situations instead of repeating the
+            same experience. There was a good balance
+            between tension, puzzle-solving, and those
+            ridiculous moments where I couldn't decide
+            whether to laugh or scream.
+          </p>
+
+          <p>
+            <strong>Final impression: Liked It.</strong>
+            A creepy and entertaining demo with interesting
+            puzzles, unsettling creatures, and enough tension
+            to keep me engaged throughout. I'm curious
+            to see what the full game has to offer,
+            so it's definitely on my Maybe list!
           </p>
 
         </div>
@@ -916,10 +997,11 @@
 
   </div>
 
-  <!-- SEARCH, FILTER AND COUNTERS -->
+  <!-- =========================
+       SEARCH, FILTER AND COUNTERS
+  ========================= -->
 
   <script>
-
     const searchInput =
       document.getElementById("searchInput");
 
@@ -950,7 +1032,6 @@
     // SEARCH AND FILTER FUNCTION
 
     function filterTable() {
-
       const searchValue =
         searchInput.value.trim().toLowerCase();
 
@@ -961,7 +1042,6 @@
         interestFilter.value.toLowerCase();
 
       rows.forEach(row => {
-
         const game =
           row.cells[0].textContent.toLowerCase();
 
@@ -986,11 +1066,9 @@
           matchesSearch &&
           matchesImpression &&
           matchesInterest
-          ? ""
-          : "none";
-
+            ? ""
+            : "none";
       });
-
     }
 
     searchInput.addEventListener(
@@ -1007,7 +1085,6 @@
       "change",
       filterTable
     );
-
   </script>
 
 </body>
